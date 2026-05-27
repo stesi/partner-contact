@@ -46,6 +46,13 @@ NUTS = [
         "parent": {"type": "literal", "value": "ES24a"},
     },
     {
+        "s": {"type": "uri", "value": "http://data.europa.eu/nuts/code/ES3"},
+        "code": {"type": "literal", "value": "ES3a"},
+        "region_name": {"type": "literal", "value": "ES3a Este"},
+        "level": {"type": "literal", "value": "1"},
+        "parent": {"type": "literal", "value": "ESa"},
+    },
+    {
         "s": {"type": "uri", "value": "http://data.europa.eu/nuts/code/ES30"},
         "code": {"type": "literal", "value": "ES30a"},
         "region_name": {"type": "literal", "value": "ES30a Comunidad de Madrid"},

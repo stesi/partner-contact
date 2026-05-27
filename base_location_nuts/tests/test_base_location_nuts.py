@@ -32,15 +32,10 @@ class TestBaseLocationNuts(TransactionCase):
         cls.country_2 = cls.env["res.country"].search([("code", "=", "PT")])
         cls.nuts_model = cls.env["res.partner.nuts"]
         cls.nuts1_2 = cls.nuts_model.search([("code", "=", "PT1a")])
-        cls.nuts1_2.write({"country_id": cls.country_2})
         cls.nuts2_1 = cls.nuts_model.search([("code", "=", "ES2a")])
-        cls.nuts1_2.write({"country_id": cls.country_2})
         cls.nuts3_1 = cls.nuts_model.search([("code", "=", "ES24a")])
-        cls.nuts1_2.write({"country_id": cls.country_2})
         cls.nuts4_1 = cls.nuts_model.search([("code", "=", "ES243a")])
-        cls.nuts1_2.write({"country_id": cls.country_2})
         cls.nuts4_2 = cls.nuts_model.search([("code", "=", "ES300a")])
-        cls.nuts1_2.write({"country_id": cls.country_2})
 
         cls.partner = cls.env["res.partner"].create(
             {

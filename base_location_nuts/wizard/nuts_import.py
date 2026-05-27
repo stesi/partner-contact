@@ -208,8 +208,20 @@ class NutsImport(models.TransientModel):
     def import_update_partner_nuts(self):
         self._load_countries()
         query = self._get_query()
-        response = requests.get(
-            ENDPOINT, params={"format": "json", "query": query}, timeout=120
+        headers = {
+            "User-Agent": (
+                "Mozilla/5.0 (compatible; OdooNUTSImport/1.0; "
+                "+https://github.com/OCA/partner-contact)"
+            ),
+            "Accept": "application/sparql-results+json",
+            "Content-Type": "application/x-www-form-urlencoded",
+        }
+        # Use POST per SPARQL 1.1 Protocol to avoid URL-length limits on GET
+        response = requests.post(
+            ENDPOINT,
+            data={"format": "json", "query": query},
+            headers=headers,
+            timeout=120,
         )
         try:
             response.raise_for_status()
